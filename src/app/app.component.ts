@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { SpinnerService } from './shared/Services/spinner.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Subject';
+
+
+   isLoading : boolean = false
+
+
+   private _spinner = inject(SpinnerService);
+
+
+  ngOnInit(): void {
+    this._spinner.spinnerObs$.subscribe(flag => {
+      this.isLoading = flag;
+    });
+  }
 }

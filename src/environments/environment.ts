@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BASE_URL : 'https://blog-task-85307-default-rtdb.firebaseio.com',
+  Base_Url:'https://movie-model-b5809-default-rtdb.firebaseio.com'
 };
 
 /*
